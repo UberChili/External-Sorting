@@ -19,9 +19,29 @@ def generate_file(size):
 
 def chop_sort(size):
     np = math.ceil(size/10)
-    print(np)
+    nd = math.ceil(size/np)
+    D = []
 
     fp = open("file.txt", "r")
+
+    for i in range(np):
+        nai = "file" + str(i + 1) + ".txt"
+        outF = open(nai, "w")
+
+        # Reads from file.txt and copies
+        # lines into file#.txt
+        for line in fp:
+            outF.write(str(line))
+
+        for line in fp:
+            D.extend([line])
+
+        for i in range(len(D)):
+            print(D[i])
+
+        outF.close()
+
+
 
     fp.close()
 
