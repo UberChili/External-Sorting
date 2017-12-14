@@ -32,18 +32,22 @@ def chop_sort(size):
         # lines into file#.txt
         for line in fp:
             outF.write(str(line))
-
-        for line in fp:
-            D.extend([line])
-
-        for i in range(len(D)):
-            print(D[i])
-
         outF.close()
 
+        with open(nai) as fp2:
+            for line in fp2:
+                line = line.strip()
+                D.append(line)
+
+
+        #D = [line.strip() for line in open(nai, "r")]
+
+        print(D)
 
 
     fp.close()
+
+
 
 if __name__ == "__main__":
     main()
